@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RP CampAsk</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+      background-image: 
+        linear-gradient(45deg, rgba(72, 187, 120, 0.1) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(72, 187, 120, 0.1) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(72, 187, 120, 0.1) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(72, 187, 120, 0.1) 75%);
+      background-size: 60px 60px;
+      background-position: 0 0, 0 30px, 30px -30px, -30px 0px;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      color: #2d3748;
+      margin-bottom: 40px;
+      font-size: 40px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      width: 300px;
+      height: auto;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+      transition: transform 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.05);
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .card-foodie {
+      background:linear-gradient(90deg, #ff6a6a, #ff9966, #ffcc66);
+      border-radius: 20px;
+      padding: 30px;
+      width: 220px;
+      height: 200px;
+      color: #333;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card-rpay {
+      background:linear-gradient(135deg, #418cec, #8839dc);
+      border-radius: 20px;
+      padding: 30px;
+      width: 220px;
+      height: 200px;
+      color: #333;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card-event {
+      background:linear-gradient(135deg, #00c9a7, #a3cb38, #f6b93b) ;
+      border-radius: 20px;
+      padding: 30px;
+      width: 220px;
+      height: 200px;
+      color: #333;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card-find {
+      background:linear-gradient(135deg, #02aa8e, #0fd02c, #89f63b) ;
+      border-radius: 20px;
+      padding: 30px;
+      width: 220px;
+      height: 200px;
+      color: #333;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card-study {
+      background:linear-gradient(135deg, #02aa8e, #0fd02c, #89f63b) ;
+      border-radius: 20px;
+      padding: 30px;
+      width: 220px;
+      height: 200px;
+      color: #333;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card-foodie:hover, .card-rpay:hover, .card-event:hover, .card-find:hover, .card-study:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    }
+
+    .card-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 12px;
+      color: #1a1a1a;
+    }
+
+    .card-description {
+      font-size: 14px;
+      color: white;
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .card-button-foodie{
+      background-color: #ff7f50;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      display: inline-block;
+      box-shadow: 0 4px 15px rgba(255,127,80,0.4);
+    }
+    .card-button-rpay {
+      background-color: #a565ea;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      display: inline-block;
+      box-shadow: 0 4px 15px rgba(165,101,234,0.4);
+    }
+    .card-button-event {
+      background-color: #8eb525;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      display: inline-block;
+      box-shadow: 0 4px 15px rgba(142,181,37,0.4);
+    }
+
+    .card-button-find {
+      background-color: #8eb525;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      display: inline-block;
+      box-shadow: 0 4px 15px rgba(142,181,37,0.4);
+    }
+
+    .card-button-study {
+      background-color: #8eb525;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      display: inline-block;
+      box-shadow: 0 4px 15px rgba(142,181,37,0.4);
+    }
+
+    .card-button-foodie:hover, .card-button-rpay:hover, .card-button-event:hover, .card-button-find:hover, .card-button-study:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    @media (max-width: 768px) {
+      .card-foodie, .card-rpay, .card-event, .card-find, .card-study {
+        width: 90%;
+      }
+      
+      .card-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    
+    @media (min-width: 769px) and (max-width: 1100px) {
+      .card-container {
+        max-width: 800px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <img src="https://www.rp.edu.sg/images/default-source/default-album/rp-logo.png" alt="Republic Polytechnic Logo" class="logo">
+  <h1>RP CampAsk</h1>
+
+  <div class="card-container">
+    <div class="card-foodie">
+      <div class="card-title">Foodie Finder</div>
+      <div class="card-description">A campus-based app to help students discover and locate nearby food stalls quickly and easily.</div>
+      <a class="card-button-foodie" href="https://c240-fa.onrender.com/" target="_blank">Visit</a>
+    </div>
+
+    <div class="card-rpay">
+      <div class="card-title">RPay Finance</div>
+      <div class="card-description">A student financial dashboard for managing school fees, bursaries, and transactions with smart validations and chatbot support.</div>
+      <a class="card-button-rpay" href="https://rpay-financial-admin.onrender.com" target="_blank">Visit</a>
+    </div>
+
+    <div class="card-event">
+      <div class="card-title">Event Promoter</div>
+      <div class="card-description">A tool for promoting school events and enabling easy event listing and engagement through social-friendly content.</div>
+      <a class="card-button-event" href="https://campask-eventpromoter.onrender.com/" target="_blank">Visit</a>
+    </div>
+
+    <div class="card-find">
+      <div class="card-title">Find Your Way</div>
+      <div class="card-description">A digital campus navigation tool to help students and visitors find their way around Republic Polytechnic.</div>
+      <a class="card-button-find" href="https://findyourwaywb.onrender.com" target="_blank">Visit</a>
+    </div>
+
+        <div class="card-study">
+      <div class="card-title">Study Smart</div>
+      <div class="card-description">A resource hub that suggests personalized study tips and academic tools to help students improve learning outcomes.</div>
+      <a class="card-button-study" href="https://findyourwaywb.onrender.com" target="_blank">Visit</a>
+    </div>
+  </div>
+
+</body>
+</html>
